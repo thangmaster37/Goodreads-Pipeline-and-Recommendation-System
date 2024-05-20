@@ -1,0 +1,13 @@
+[2024-05-16T12:03:09.360+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: goodreads_pipeline.GoodReadsETLJob scheduled__2024-05-15T00:00:00+00:00 [queued]>
+[2024-05-16T12:03:09.414+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: goodreads_pipeline.GoodReadsETLJob scheduled__2024-05-15T00:00:00+00:00 [queued]>
+[2024-05-16T12:03:09.415+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-05-16T12:03:09.450+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): GoodReadsETLJob> on 2024-05-15 00:00:00+00:00
+[2024-05-16T12:03:09.477+0000] {standard_task_runner.py:60} INFO - Started process 112 to run task
+[2024-05-16T12:03:09.488+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'goodreads_pipeline', 'GoodReadsETLJob', 'scheduled__2024-05-15T00:00:00+00:00', '--job-id', '405', '--raw', '--subdir', 'DAGS_FOLDER/goodreads_etl_pipeline.py', '--cfg-path', '/tmp/tmpt4y6mlfz']
+[2024-05-16T12:03:09.492+0000] {standard_task_runner.py:88} INFO - Job 405: Subtask GoodReadsETLJob
+[2024-05-16T12:03:09.783+0000] {task_command.py:423} INFO - Running <TaskInstance: goodreads_pipeline.GoodReadsETLJob scheduled__2024-05-15T00:00:00+00:00 [running]> on host 4ceaa523915d
+[2024-05-16T12:03:10.666+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='goodreads' AIRFLOW_CTX_DAG_ID='goodreads_pipeline' AIRFLOW_CTX_TASK_ID='GoodReadsETLJob' AIRFLOW_CTX_EXECUTION_DATE='2024-05-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-15T00:00:00+00:00'
+[2024-05-16T12:03:11.412+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-05-16T12:03:11.452+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=goodreads_pipeline, task_id=GoodReadsETLJob, execution_date=20240515T000000, start_date=20240516T120309, end_date=20240516T120311
+[2024-05-16T12:03:11.561+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-16T12:03:11.703+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

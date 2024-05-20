@@ -1,0 +1,126 @@
+[2024-05-20T01:24:37.678+0000] {processor.py:161} INFO - Started process (PID=36) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:24:37.683+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:24:37.692+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:24:37.692+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:24:37.794+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:24:37.786+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:24:37.796+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:24:37.857+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.191 seconds
+[2024-05-20T01:25:08.603+0000] {processor.py:161} INFO - Started process (PID=43) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:25:08.617+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:25:08.724+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:25:08.716+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:25:11.261+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:25:09.033+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:25:11.271+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:25:12.144+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 3.654 seconds
+[2024-05-20T01:25:42.400+0000] {processor.py:161} INFO - Started process (PID=50) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:25:42.404+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:25:42.408+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:25:42.408+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:25:42.477+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:25:42.471+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:25:42.478+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:25:42.512+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.117 seconds
+[2024-05-20T01:26:13.204+0000] {processor.py:161} INFO - Started process (PID=57) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:26:13.210+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:26:13.273+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:26:13.267+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:26:13.458+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:26:13.443+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:26:13.462+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:26:13.720+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.610 seconds
+[2024-05-20T01:26:43.941+0000] {processor.py:161} INFO - Started process (PID=64) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:26:43.942+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:26:43.961+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:26:43.959+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:26:44.036+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:26:44.033+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:26:44.038+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:26:44.059+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.121 seconds
+[2024-05-20T01:27:14.228+0000] {processor.py:161} INFO - Started process (PID=71) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:27:14.234+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:27:14.238+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:27:14.237+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:27:14.386+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:27:14.379+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:27:14.388+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:27:14.538+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.339 seconds
+[2024-05-20T01:27:44.756+0000] {processor.py:161} INFO - Started process (PID=78) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:27:44.758+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:27:44.762+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:27:44.761+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:27:44.822+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:27:44.818+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:27:44.824+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:27:44.845+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.092 seconds
+[2024-05-20T01:28:14.960+0000] {processor.py:161} INFO - Started process (PID=85) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:28:14.961+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:28:14.964+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:28:14.964+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:28:15.001+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:28:14.998+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:28:15.002+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:28:15.021+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.064 seconds
+[2024-05-20T01:28:45.233+0000] {processor.py:161} INFO - Started process (PID=92) to work on /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:28:45.234+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/goodreads_etl_pipeline.py for tasks to queue
+[2024-05-20T01:28:45.236+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:28:45.236+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:28:45.269+0000] {logging_mixin.py:188} INFO - [2024-05-20T01:28:45.267+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/goodreads_etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/opt/airflow/dags/goodreads_etl_pipeline.py", line 35, in <module>
+    from goodreads_driver import main
+ModuleNotFoundError: No module named 'goodreads_driver'
+[2024-05-20T01:28:45.270+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/goodreads_etl_pipeline.py
+[2024-05-20T01:28:45.287+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/goodreads_etl_pipeline.py took 0.056 seconds
