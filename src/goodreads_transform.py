@@ -31,8 +31,8 @@ class GoodreadsTransform:
         self._load_path = config.get('BUCKET', 'WORKING_ZONE')
         self._save_path = config.get('BUCKET', 'PROCESSED_ZONE')
         self._session = boto3.Session(
-                            aws_access_key_id='AKIA47CRXYUC3K2IZINA',
-                            aws_secret_access_key='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'
+                            aws_access_key_id='AWS-KEY',
+                            aws_secret_access_key='AWS-SECRET-KEY'
                         )
 
     def transform_author_dataset(self):

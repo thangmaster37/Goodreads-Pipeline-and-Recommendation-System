@@ -52,10 +52,6 @@ def main():
     logging.debug("\n\nSetting up Spark Session...")
     spark = create_sparksession()
 
-    # sc = spark.sparkContext
-    # sc._jsc.hadoopConfiguration().set('fs.s3a.access.key', 'AKIA47CRXYUC3K2IZINA')
-    # sc._jsc.hadoopConfiguration().set('fs.s3a.secret.key', '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')
-
     grt = GoodreadsTransform(spark)
 
     # Modules in the project
