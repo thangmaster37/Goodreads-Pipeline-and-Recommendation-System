@@ -9,7 +9,7 @@ warehouse_schema = config.get('WAREHOUSE', 'SCHEMA')
 create_warehouse_schema = "CREATE SCHEMA IF NOT EXISTS {};".format(warehouse_schema)
 
 drop_authors_table = "DROP TABLE IF EXISTS {}.authors;".format(warehouse_schema)
-drop_reviews_table = "DROP TABLE IF EXISTS .reviews;".format(warehouse_schema)
+drop_reviews_table = "DROP TABLE IF EXISTS {}.reviews;".format(warehouse_schema)
 drop_books_table = "DROP TABLE IF EXISTS {}.books;".format(warehouse_schema)
 drop_users_table = "DROP TABLE IF EXISTS {}.users;".format(warehouse_schema)
 

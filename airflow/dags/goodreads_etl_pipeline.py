@@ -80,7 +80,7 @@ start_operator = EmptyOperator(task_id='Begin_execution',  dag=dag)
 
 jobOperator = PythonOperator(
     task_id='GoodReadsETLJob',
-    python_callable=main,
+    python_callable=execute_command,
     dag=dag
 )
 
@@ -91,7 +91,6 @@ warehouse_data_quality_checks = DataQualityOperator(
     tables = ["goodreads_warehouse.authors", "goodreads_warehouse.reviews", "goodreads_warehouse.books", "goodreads_warehouse.users"]
 
 )
-
 
 create_analytics_schema = LoadAnalyticsOperator(
     task_id='Create_analytics_schema',

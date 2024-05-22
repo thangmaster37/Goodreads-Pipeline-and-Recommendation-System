@@ -106,11 +106,11 @@ DISTSTYLE ALL
 
 copy_authors_table = """
 COPY {0}.authors
-FROM '{1}/authors'
+FROM '{1}/processed_author.csv'
 IAM_ROLE '{2}'
-CSV
-DELIMITER '|'
-GZIP
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
 NULL AS  '\\000'
 IGNOREHEADER 1
 ;
@@ -119,11 +119,11 @@ IGNOREHEADER 1
 
 copy_reviews_table = """
 COPY {0}.reviews
-FROM '{1}/reviews'
+FROM '{1}/processed_reviews.csv'
 IAM_ROLE '{2}'
-CSV
-DELIMITER '|'
-GZIP
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
 NULL AS  '\\000'
 IGNOREHEADER 1
 ;
@@ -132,11 +132,11 @@ IGNOREHEADER 1
 
 copy_books_table = """
 COPY {0}.books
-FROM '{1}/books'
+FROM '{1}/processed_book.csv'
 IAM_ROLE '{2}'
-CSV
-DELIMITER '|'
-GZIP
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
 NULL AS  '\\000'
 IGNOREHEADER 1
 ;
@@ -146,11 +146,11 @@ IGNOREHEADER 1
 
 copy_users_table = """
 COPY {0}.users
-FROM '{1}/users'
+FROM '{1}/processed_user.csv'
 IAM_ROLE '{2}'
-CSV
-DELIMITER '|'
-GZIP
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
 NULL AS  '\\000'
 IGNOREHEADER 1
 ;

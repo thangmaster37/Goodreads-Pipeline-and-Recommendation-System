@@ -1,3 +1,280 @@
-2024-05-18 21:18:31,265 root         DEBUG    
+2024-05-23 02:13:13,002 root         DEBUG    
 
 Setting up Spark Session...
+2024-05-23 02:13:24,522 root         DEBUG    Waiting before setting up Warehouse
+2024-05-23 02:13:31,939 root         DEBUG    Setting up staging tables
+2024-05-23 02:13:31,941 root         DEBUG    Creating schema for staging.
+2024-05-23 02:13:31,942 root         DEBUG    Executing Query : CREATE SCHEMA IF NOT EXISTS goodreads_staging;
+2024-05-23 02:13:33,464 root         DEBUG    Dropping Staging tables.
+2024-05-23 02:13:33,466 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_staging.authors;
+2024-05-23 02:13:34,865 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_staging.reviews;
+2024-05-23 02:13:36,224 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_staging.books;
+2024-05-23 02:13:37,605 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_staging.users;
+2024-05-23 02:13:38,930 root         DEBUG    Creating Staging tables.
+2024-05-23 02:13:38,934 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_staging.authors
+(
+    author_id BIGINT PRIMARY KEY,
+    name VARCHAR,
+    role VARCHAR,
+    profile_url VARCHAR,
+    average_rating FLOAT,
+    rating_count INT,
+    text_review_count INT,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE ALL
+;
+
+2024-05-23 02:13:40,291 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_staging.reviews
+(
+    review_id BIGINT PRIMARY KEY ,
+    user_id BIGINT,
+    book_id BIGINT,
+    author_id BIGINT,
+    review_text VARCHAR(max),
+    review_rating FLOAT,
+    review_votes INT,
+    spoiler_flag BOOLEAN,
+    spoiler_state VARCHAR,
+    review_added_date TIMESTAMP,
+    review_updated_date TIMESTAMP,
+    review_read_count INT,
+    comments_count INT,
+    review_url VARCHAR,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE ALL
+;
+
+2024-05-23 02:13:41,846 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_staging.books
+(
+    book_id BIGINT PRIMARY KEY ,
+    title VARCHAR,
+    title_without_series VARCHAR,
+    image_url VARCHAR,
+    book_url VARCHAR,
+    num_pages INT,
+    "format" VARCHAR,
+    edition_information VARCHAR,
+    publisher VARCHAR,
+    publication_day INT2,
+    publication_year INT2,
+    publication_month INT2,
+    average_rating FLOAT,
+    ratings_count INT,
+    description VARCHAR(max),
+    authors BIGINT,
+    published INT2,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE ALL
+;
+
+2024-05-23 02:13:43,186 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_staging.users
+(
+    user_id BIGINT PRIMARY KEY ,
+    user_name VARCHAR,
+    user_display_name VARCHAR,
+    location VARCHAR,
+    profile_link VARCHAR,
+    uri VARCHAR,
+    user_image_url VARCHAR,
+    small_image_url VARCHAR,
+    has_image BOOLEAN,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE ALL
+;
+
+2024-05-23 02:13:44,599 root         DEBUG    Populating staging tables
+2024-05-23 02:13:44,600 root         DEBUG    Populating staging tables
+2024-05-23 02:13:44,605 root         DEBUG    Executing Query : 
+COPY goodreads_staging.authors
+FROM 's3://processed-zone-goodreads/processed_author.csv'
+IAM_ROLE 'arn:aws:iam::891377140997:role/service-role/AmazonRedshift-CommandsAccessRole-20240515T020234'
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
+NULL AS  '\000'
+IGNOREHEADER 1
+;
+
+2024-05-23 02:13:46,506 root         DEBUG    Executing Query : 
+COPY goodreads_staging.reviews
+FROM 's3://processed-zone-goodreads/processed_reviews.csv'
+IAM_ROLE 'arn:aws:iam::891377140997:role/service-role/AmazonRedshift-CommandsAccessRole-20240515T020234'
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
+NULL AS  '\000'
+IGNOREHEADER 1
+;
+
+2024-05-23 02:13:48,493 root         DEBUG    Executing Query : 
+COPY goodreads_staging.books
+FROM 's3://processed-zone-goodreads/processed_book.csv'
+IAM_ROLE 'arn:aws:iam::891377140997:role/service-role/AmazonRedshift-CommandsAccessRole-20240515T020234'
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
+NULL AS  '\000'
+IGNOREHEADER 1
+;
+
+2024-05-23 02:13:50,381 root         DEBUG    Executing Query : 
+COPY goodreads_staging.users
+FROM 's3://processed-zone-goodreads/processed_user.csv'
+IAM_ROLE 'arn:aws:iam::891377140997:role/service-role/AmazonRedshift-CommandsAccessRole-20240515T020234'
+FORMAT AS CSV
+DELIMITER ','
+QUOTE '"'
+NULL AS  '\000'
+IGNOREHEADER 1
+;
+
+2024-05-23 02:13:52,427 root         DEBUG    Setting up Warehouse tables
+2024-05-23 02:13:52,427 root         DEBUG    Creating scheam for warehouse.
+2024-05-23 02:13:52,428 root         DEBUG    Executing Query : CREATE SCHEMA IF NOT EXISTS goodreads_warehouse;
+2024-05-23 02:13:53,731 root         DEBUG    Dropping Warehouse tables.
+2024-05-23 02:13:53,733 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_warehouse.authors;
+2024-05-23 02:13:54,502 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_warehouse.reviews;
+2024-05-23 02:13:55,240 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_warehouse.books;
+2024-05-23 02:13:55,987 root         DEBUG    Executing Query : DROP TABLE IF EXISTS goodreads_warehouse.users;
+2024-05-23 02:13:56,731 root         DEBUG    Creating Warehouse tables.
+2024-05-23 02:13:56,742 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_warehouse.authors
+(
+    author_id BIGINT PRIMARY KEY DISTKEY,
+    name VARCHAR,
+    role VARCHAR,
+    profile_url VARCHAR,
+    average_rating FLOAT,
+    rating_count INT,
+    text_review_count INT,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE KEY
+;
+
+2024-05-23 02:13:58,172 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_warehouse.reviews
+(
+    review_id BIGINT PRIMARY KEY ,
+    user_id BIGINT,
+    book_id BIGINT,
+    author_id BIGINT DISTKEY ,
+    review_text VARCHAR(max),
+    review_rating FLOAT,
+    review_votes INT,
+    spoiler_flag BOOLEAN,
+    spoiler_state VARCHAR,
+    review_added_date TIMESTAMP,
+    review_updated_date TIMESTAMP,
+    review_read_count INT,
+    comments_count INT,
+    review_url VARCHAR,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE KEY
+;
+
+2024-05-23 02:13:59,539 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_warehouse.books
+(
+    book_id BIGINT PRIMARY KEY ,
+    title VARCHAR,
+    title_without_series VARCHAR,
+    image_url VARCHAR,
+    book_url VARCHAR,
+    num_pages INT,
+    "format" VARCHAR,
+    edition_information VARCHAR,
+    publisher VARCHAR,
+    publication_day INT2,
+    publication_year INT2,
+    publication_month INT2,
+    average_rating FLOAT,
+    ratings_count INT,
+    description VARCHAR(max),
+    authors BIGINT,
+    published INT2,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE EVEN
+;
+
+2024-05-23 02:14:00,928 root         DEBUG    Executing Query : 
+CREATE TABLE IF NOT EXISTS goodreads_warehouse.users
+(
+    user_id BIGINT PRIMARY KEY ,
+    user_name VARCHAR,
+    user_display_name VARCHAR,
+    location VARCHAR,
+    profile_link VARCHAR,
+    uri VARCHAR,
+    user_image_url VARCHAR,
+    small_image_url VARCHAR,
+    has_image BOOLEAN,
+    record_create_timestamp TIMESTAMP
+)
+DISTSTYLE EVEN
+;
+
+2024-05-23 02:14:02,285 root         DEBUG    Performing UPSERT
+2024-05-23 02:14:02,286 root         DEBUG    Performing Upsert.
+2024-05-23 02:14:02,289 root         DEBUG    Executing Query : 
+BEGIN TRANSACTION;
+
+DELETE FROM goodreads_warehouse.authors
+using goodreads_staging.authors
+where goodreads_warehouse.authors.author_id = goodreads_staging.authors.author_id;
+
+INSERT INTO goodreads_warehouse.authors
+SELECT * FROM goodreads_staging.authors;
+
+END TRANSACTION ;
+COMMIT;
+
+2024-05-23 02:14:15,071 root         DEBUG    Executing Query : 
+BEGIN TRANSACTION;
+
+DELETE FROM goodreads_warehouse.reviews
+using goodreads_staging.reviews
+where goodreads_warehouse.reviews.review_id = goodreads_staging.reviews.review_id;
+
+INSERT INTO goodreads_warehouse.reviews
+SELECT * FROM goodreads_staging.reviews;
+
+END TRANSACTION ;
+COMMIT;
+
+2024-05-23 02:14:20,747 root         DEBUG    Executing Query : 
+BEGIN TRANSACTION;
+
+DELETE FROM goodreads_warehouse.books
+using goodreads_staging.books
+where goodreads_warehouse.books.book_id = goodreads_staging.books.book_id;
+
+INSERT INTO goodreads_warehouse.books
+SELECT * FROM goodreads_staging.books;
+
+END TRANSACTION ;
+COMMIT;
+
+2024-05-23 02:14:26,430 root         DEBUG    Executing Query : 
+BEGIN TRANSACTION;
+
+DELETE FROM goodreads_warehouse.users
+using goodreads_staging.users
+where goodreads_warehouse.users.user_id = goodreads_staging.users.user_id;
+
+INSERT INTO goodreads_warehouse.users
+SELECT * FROM goodreads_staging.users;
+
+END TRANSACTION ;
+COMMIT;
+

@@ -39,10 +39,11 @@ class GoodReadsWarehouseDriver:
         logging.debug("Creating scheam for warehouse.")
         self.execute_query([create_warehouse_schema])
 
+        logging.debug("Dropping Warehouse tables.")
+        self.execute_query(drop_warehouse_tables)
 
         logging.debug("Creating Warehouse tables.")
         self.execute_query(create_warehouse_tables)
-
 
 
     def perform_upsert(self):
