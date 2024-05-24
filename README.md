@@ -1,8 +1,8 @@
-## Goodreads Pipeline and Recommendation System
+# Goodreads Pipeline and Recommendation System
 
 Data is created and stored on local disk and moved to AWS S3. Perform ETL tasks and move data to AWS Redshift. Tasks are scheduled daily.
 
-# ETL Workflow
+## ETL Workflow
 
 - Data is moved to landing zone s3 buckets.
 - ETL job has s3 module which copies data from landing zone to working zone.
@@ -14,6 +14,17 @@ Data is created and stored on local disk and moved to AWS S3. Perform ETL tasks 
 - Airflow DAG has Analytics queries configured in a Custom Designed Operator. These queries are run and again a Data Quality Check is done on some selected Analytics Table.
 - Dag execution completes after these Data Quality check.
 
-# Airflow Connect
+## Airflow Connect
+
+![UI](postgres_connect.png)
+![UI](redshift_connect.png)
+
+## Workflow
+
+![UI](workflow.png)
+
+## Run
+
+![UI](run.png)
 
 
