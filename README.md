@@ -16,10 +16,17 @@ Data is created and stored on local disk and moved to AWS S3. Perform ETL tasks 
 
 ## Airflow Connect
 
+Connect to PostgreSQL
+
 ![UI](postgres_connect.png)
+
+Connect to AWS Redshift via PostgreSQL
+
 ![UI](redshift_connect.png)
 
 ## Workflow
+
+
 
 ![UI](workflow.png)
 
